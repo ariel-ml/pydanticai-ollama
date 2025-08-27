@@ -77,6 +77,11 @@ class CityLocation(BaseModel):
 ollama_settings = OllamaModelSettings(
     temperature=0.7,
     num_predict=128,
+    num_ctx=2048,
+    main_gpu=0,
+    num_gpu=1,
+    num_thread=4,
+    repeat_penalty=1.1,
     top_k=40,
     top_p=0.9
 )
@@ -187,7 +192,7 @@ class Joke(BaseModel):
     punchline: str = Field(description="The punchline of the joke")
 
 async def structured_output_example():
-    ollama_model = OllamaModel(model_name='llama2') # Ensure model supports JSON output
+    ollama_model = OllamaModel(model_name='qwen3:4b-instruct') # Ensure model supports JSON output
     agent = Agent(ollama_model, output_type=Joke)
 
     print("Structured output example:")
@@ -210,7 +215,7 @@ from pydanticai_ollama.models.ollama import OllamaModel
 from pydanticai_ollama.providers.ollama import OllamaProvider
 
 async def multimodal_example():
-    ollama_model = OllamaModel(model_name='llava') # Use a multi-modal model like LLaVA
+    ollama_model = OllamaModel(model_name='gemma3:latest') # Use a multi-modal model like LLaVA
     agent = Agent(ollama_model)
 
     # You can use a local file path or a URL
