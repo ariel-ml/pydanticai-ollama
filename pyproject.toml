@@ -1,0 +1,62 @@
+[project]
+name = "pydanticai-ollama"
+version = "0.1.2"
+description = "Pydantic AI Ollama integration"
+readme = "README.md"
+authors = [
+    { name = "Ariel Kövér", email = "ariel.ai.ml.dl@gmail.com" }
+]
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Internet",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Framework :: Pydantic",
+    "Framework :: Pydantic :: 2",
+]
+
+requires-python = ">=3.9"
+dependencies = [
+    "ollama>=0.5.3",
+    "pydantic-ai-slim>=0.7.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/ariel-ml/pydanticai-ollama"
+Source = "https://github.com/ariel-ml/pydanticai-ollama"
+Documentation = "https://github.com/ariel-ml/pydanticai-ollama"
+Changelog = "https://github.com/ariel-ml/pydanticai-ollama/releases"
+
+[build-system]
+requires = ["uv_build>=0.8.0,<0.9"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "dirty-equals>=0.9.0",
+    "inline-snapshot>=0.27.2",
+    "ipykernel>=6.30.1",
+    "ipywidgets>=8.1.7",
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+    "pytest-mock>=3.14.1",
+    "python-dotenv>=1.1.1",
+]
