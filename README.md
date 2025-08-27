@@ -103,7 +103,6 @@ async def main():
     print(result.usage())
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
 ```
 
