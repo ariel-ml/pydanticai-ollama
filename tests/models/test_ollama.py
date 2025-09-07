@@ -543,6 +543,7 @@ async def test_stream_structured(allow_model_requests: None):
                 usage=RequestUsage(input_tokens=30, output_tokens=15),
                 model_name="qwen3:4b-instruct",
                 timestamp=IsNow(tz=datetime.timezone.utc),
+                provider_name="ollama",
             ),
             ModelRequest(
                 parts=[
